@@ -1,0 +1,238 @@
+#
+#F= reflected on y axis
+#R= refelcted on x axis
+#
+#
+#se of  this program is to take an input from a user and make a p
+    #atter in lolcat with the given input from the user
+  
+
+
+   echo " how many big  would you like your shape"
+   read units 
+	#echo "what char would you like to make it out of "
+	 char=#
+#tri() make a half triangle and revtri gets a reverse triangle  
+tri(){
+for ((i=1; i<=units; i++))
+do
+	for((j=1; j<=i; j++))
+	do
+	 echo -n "$char" |lolcat
+	done
+	echo
+	done
+}
+Rtri(){
+for ((i=units;i>=1;i--))
+do
+	for ((j=1;j<=i;j++))
+	do
+	echo -n "$char" | lolcat
+	done
+	echo
+done
+}
+#this is flipped triangles
+
+Ftri()
+{
+for ((i=1; i<=units; i++))
+do
+        for((j=1; j<=i; j++))
+        do
+         echo -n " " |lolcat
+        done
+	for((j=units;j>=i;j--))
+	do 
+	echo -n "$char" |lolcat
+	done
+        echo
+        done
+}
+RFtri(){
+for ((i=units; i>=1; i--))
+do
+        for((j=1; j<=i; j++))
+        do
+         echo -n " " |lolcat
+        done
+        for((j=units;j>=i;j--))
+        do
+        echo -n "$char" |lolcat
+        done
+        echo
+        done
+}
+
+#this is for pyrimids
+pyr() {
+for ((i=1;i<=units;i++))
+do
+	for((j=0;j<= units -i;j++))
+	do 
+	echo -n " " |lolcat
+	done
+for ((j=1;j<=2*i - 1;j++))
+do 
+echo -n "$char" |lolcat 
+done
+echo 
+done
+}
+
+Rpyr(){
+  for ((i=units;i>=1;i--))
+  do
+          for((j=0;j<=units -i;j++))
+          do
+          echo -n " " | lolcat
+          done
+  for ((j=1;j<=2*i - 1;j++))
+  do
+  echo -n  "$char" |lolcat
+  done
+  echo
+  done
+}
+
+SQtri(){
+
+for ((i=1;i<=units; i++))
+	do
+	for ((j=1;j<=units;j++))
+	do         
+	echo -n " " |lolcat
+	done 
+        for((j=1;j<=i;j++))
+        do
+         echo -n "$char" |lolcat
+        done
+        echo
+        done
+
+
+}
+FSQtri(){
+for ((i=0;i<=units; i++))
+        do
+        for ((j=0;j<=units;j++))
+        do
+        echo -n " " |lolcat
+        done
+         for((j=0; j<=i; j++))
+         do
+          echo -n " " |lolcat
+         done
+	  for ((j=units-i;j>0;j--))
+          do
+	   echo -n "$char" | lolcat 
+         done
+echo	
+done	
+}	
+	
+RFSQtri(){
+for ((i=1;i<=units; i++))
+	do
+        for ((j=0;j<=units;j++))
+        do
+        echo -n " " |lolcat
+        done
+        for((j=units; j>=i; j--))
+        do
+         echo -n " " |lolcat
+          done
+        for ((j=i+units;j>units;j--))
+        do
+         echo -n "$char" | lolcat
+        done
+        echo
+        done
+}
+
+
+
+   echo "what shape would you like to make"
+	echo -n [1]
+	echo -n [2]
+	echo -n [3]
+	echo -n [4]
+	echo -n [5]
+	echo -n [6]
+	echo -n [7]
+
+
+   read shape
+
+
+
+#this gets the length of characters of the current terminal
+#getTermLength()
+case $shape in
+
+  1) 
+n=0
+while :
+	do 
+		tri
+		sleep .5
+((n++))
+done
+    ;;
+
+
+  2) 
+n=0
+while :
+	do 
+		Rtri
+		sleep .5
+((n++))
+done
+    ;;
+
+
+  3) 
+n=0
+while :
+	do 
+		RFtri
+		sleep .5
+((n++))
+done
+    ;;
+  4) 
+n=0
+while :
+	do 
+		SQtri
+		sleep .5
+((n++))
+done
+    ;;
+  5) 
+n=0
+while :
+	do 
+		FSQtri
+		sleep .5
+((n++))
+done
+    ;;
+
+  *) 
+n=0
+while :
+	do 
+	sleep .01
+		tri 
+		Rtri
+		pyr
+		Rpyr
+	
+((n++))
+done
+    ;;
+esac
+

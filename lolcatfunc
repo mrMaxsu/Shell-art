@@ -1,0 +1,48 @@
+
+#se of  this program is to take an input from a user and make a p
+    #atter in lolcat with the given input from the user
+  
+  
+   echo "what character would you like to use"
+   read char
+   echo " how many rows would you like to print"
+   read units
+
+
+#this gets the length of characters of the current terminal
+#getTermLength()
+
+
+
+
+
+
+#tri() make a half triangle and revtri gets a reverse triangle  
+tri(){
+for ((i=1; i<=units; i++))
+do
+	for((j=1; j<=i; j++))
+	do
+	 echo -n "$char" |lolcat
+	done
+	echo
+	done
+}
+revtri(){
+for ((i=units;i>=1;i--))
+do
+	for ((j=1;j<=i;j++))
+	do
+	echo -n "$char" | lolcat
+	done
+	echo
+done
+}
+
+n=0
+while :
+do
+tri
+revtri
+((n++))
+done

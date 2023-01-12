@@ -1,0 +1,16 @@
+#the purpose of  this program is to take an input from a user and make a p#atter in lolcat with the given input from the user
+
+
+echo "what character would you like to use"
+read char
+echo " how many rows would you like to print"
+read units
+
+for((i=1; i<=units; i++))
+do
+  for((j=1; j<=i; j++))
+  do
+     echo -n "$char" |lolcat
+	done
+	echo 
+done

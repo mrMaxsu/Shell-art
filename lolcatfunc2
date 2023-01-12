@@ -1,0 +1,234 @@
+#f
+#F= reflected on y axis
+#R= refelcted on x axis
+#
+#
+#se of  this program is to take an input from a user and make a p
+    #atter in lolcat with the given input from the user
+  
+  
+#   echo "what character would you like to use"
+#   read char
+
+
+   echo " how many rows would you like to print"
+   read units
+
+
+
+# Run an infinite loop
+  # Set the character variable to a random ASCII character
+  
+
+  # Output the characte
+
+  # Wait for one second before iterating the loop again
+  
+
+
+
+
+
+
+
+
+#this gets the length of characters of the current terminal
+#getTermLength()
+
+
+
+
+
+#tri() make a half triangle and revtri gets a reverse triangle  
+tri(){
+for ((i=1; i<=units; i++))
+do
+	for((j=1; j<=i; j++))
+	do
+	 char=$((RANDOM % 10))
+	 echo -n "$char" |lolcat
+	done
+	echo
+	done
+}
+Rtri(){
+for ((i=units;i>=1;i--))
+do
+	for ((j=1;j<=i;j++))
+	do
+	 char=$((RANDOM % 10))
+	echo -n "$char" | lolcat
+	done
+	echo
+done
+}
+#this is flipped triangles
+
+Ftri()
+{
+
+for ((i=1; i<=units; i++))
+do
+        for((j=1; j<=i; j++))
+        do
+         echo -n " " |lolcat
+        done
+	for((j=units;j>=i;j--))
+	do 
+char=$((RANDOM % 10))
+	echo -n "$char" |lolcat
+	done
+        echo
+        done
+}
+RFtri(){
+for ((i=units; i>=1; i--))
+do
+        for((j=1; j<=i; j++))
+        do
+         echo -n " " |lolcat
+        done
+        for((j=units;j>=i;j--))
+        do
+ char=$((RANDOM % 10))
+        echo -n "$char" |lolcat
+        done
+        echo
+        done
+}
+
+#this is for pyrimids
+pyr() {
+for ((i=1;i<=units;i++))
+do
+	for((j=0;j<= units -i;j++))
+	do 
+	echo -n " " |lolcat
+	done
+for ((j=1;j<=2*i - 1;j++))
+do 
+ char=$((RANDOM % 10))
+echo -n "$char" |lolcat 
+done
+echo 
+done
+}
+
+Rpyr(){
+  for ((i=units;i>=1;i--))
+  do
+          for((j=0;j<=units -i;j++))
+          do
+          echo -n " " | lolcat
+          done
+  for ((j=1;j<=2*i - 1;j++))
+  do
+ char=$((RANDOM % 10))
+  echo -n  "$char" |lolcat
+  done
+  echo
+  done
+}
+
+SQtri(){
+
+for ((i=1;i<=units; i++))
+	do
+	for ((j=1;j<=units;j++))
+	do         
+	echo -n " " |lolcat
+	done 
+        for((j=1;j<=i;j++))
+        do
+ char=$((RANDOM % 10))
+         echo -n "$char" |lolcat
+        done
+        echo
+        done
+
+
+}
+RSQtri(){
+
+for ((i=1;i<=units; i++))
+	do
+	for ((j=1;j<=units;j++))
+	do         
+	echo -n " " |lolcat
+	done 
+        for((j=units;j>=i;j--))
+        do
+ char=$((RANDOM % 10))
+         echo -n "$char" |lolcat
+        done
+        echo
+        done
+
+
+}
+
+
+
+
+FSQtri(){
+for ((i=0;i<units; i++))
+        do
+        for ((j=0;j<=units;j++))
+        do
+        echo -n " " |lolcat
+        done
+         for((j=0; j<i; j++))
+         do
+          echo -n " " |lolcat
+         done
+	  for ((j=units-i;j>0;j--))
+          do
+ char=$((RANDOM % 10))
+	   echo -n "$char" | lolcat 
+         done
+echo	
+done	
+}	
+	
+RFSQtri(){
+for ((i=1;i<=units; i++))
+do
+        for ((j=0;j<=units;j++))
+        do
+        echo -n " " |lolcat
+        done
+        for((j=units; j>i; j--))
+        do
+         echo -n " " |lolcat
+          done
+        for ((j=i+units;j>units;j--))
+        do
+	 char=$((RANDOM % 10))
+         echo -n "$char" | lolcat
+        done
+        echo
+        done
+}
+
+
+
+
+
+
+n=0
+while :
+do
+pyr
+Rpyr
+RFtri
+Rtri
+tri
+Ftri
+SQtri
+FSQtri
+RFSQtri
+RSQtri
+pyr
+Rpyr
+((n++))
+done
